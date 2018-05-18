@@ -4,15 +4,25 @@ import { Component } from "@angular/core";
     selector: 'app-root',
     template: `<h1>Hello Angular</h1>  
     
-  
-    <div>
-        <app-home></app-home>
-    </div>
-    <div>
-        <app-about></app-about>
-    </div>
-    
+       <h1> {{1+2}}  </h1>
+       <h1>{{"Mujib" + " Rahman"}}</h1>
+       <h2>{{getName()}}</h2>
+       {{obj}}
+
+       {{obj?"True":"False"}}
+   
     `
 })
 export class AppComponent {
+
+    name: string = "John";
+    obj ="";
+    surname: string = " Labash";
+
+    getName(): string {
+        //time consuming
+        //no side effects
+        return this.name + ' ' + this.surname;
+    }
+
 }
