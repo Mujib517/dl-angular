@@ -3,39 +3,13 @@ import { Component } from "@angular/core";
 @Component({
     selector: 'app-root',
     template: `
-    
-        <h1 [class.red]="name">Hello Angular</h1> 
-        
-        <h1 [style.border]="name?'1px solid gray':'none'">My Heading</h1>
-    
-       <h1 > {{1+2}}  </h1>
-       <h1>{{"Mujib" + " Rahman"}}</h1>
-       <h2>{{getName()}}</h2>
-       {{obj}}
+            <h1>Hello Angular</h1> 
 
-       {{obj?"True":"False"}}
+            <h1>{{name}}</h1>
 
-       <button (click)="onSave('data')">Save</button>
-       <button [hidden]="false">Save2</button>
-   
-       <input type="text" [value]="obj?'True':'False'"/>
+            <input type="text" [(ngModel)]="name"/>
     `
 })
 export class AppComponent {
-
-    name: string = "adkfjalkjdf";
-    obj = "";
-    surname: string = " Labash";
-
-    getName(): string {
-        //time consuming
-        //no side effects
-        //pure function
-        return this.name + ' ' + this.surname;
-    }
-
-    onSave(param) {
-        console.log("Data Saved!!", param);
-    }
-
+    name: string = "John";
 }
