@@ -6,8 +6,8 @@ import { Component } from "@angular/core";
   selector: 'app-product-list',
   template: `
   <h1>Products</h1>
-
-  <div *ngFor="let product of products">
+  <div class="col-md-7">
+  <div *ngFor="let product of products" class="well">
     <h3>{{product.brand | uppercase}}</h3>
     <h3>{{product.model | lowercase}}</h3>
     <b>{{product.price | currency}}</b>
@@ -19,6 +19,7 @@ import { Component } from "@angular/core";
       {{product.lastUpdated | date:'MM-dd-yyyy hh:mm a'}}
     </div>
     <hr/>
+  </div>
   </div>
 
   `
