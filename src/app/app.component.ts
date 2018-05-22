@@ -23,14 +23,22 @@ import { Component } from "@angular/core";
     <table border="1">
         <thead>
             <tr>
-                <td>
-                    Value
-                </td>
+                <td> Value </td>
+                <td> Index</td>
+                <td> Even</td>
+                <td> Odd</td>
+                <td> First</td>
+                <td> Last</td>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let val of arr">
+            <tr *ngFor="let val of arr;let idx=index;let evn=even; let odd=odd;let fst=first;let lst=last;">
                 <td>{{val}}</td>
+                <td>{{idx}}</td>
+                <td>{{evn}}</td>
+                <td>{{odd}}</td>
+                <td>{{fst}}</td>
+                <td>{{lst}}</td>
             </tr>
         </tbody>
     </table>
