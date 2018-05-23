@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import * as moment from 'moment';
+
 
 @Component({
   selector: 'app-product',
@@ -16,7 +16,7 @@ import * as moment from 'moment';
         {{product.lastUpdated | date:'MM-dd-yyyy hh:mm a'}}
       </div>
       <div>
-        {{getRelativeTime(product.lastUpdated)}}
+        {{product.lastUpdated | relativetime }}
       </div>
     </div>
   `
@@ -25,7 +25,5 @@ export class ProductComponent {
   @Input()
   product: any;
 
-  getRelativeTime(date){
-    return moment(date).fromNow();
-  }
+ 
 }

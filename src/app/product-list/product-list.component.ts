@@ -10,7 +10,6 @@ import { Component } from "@angular/core";
    <app-product [product] ="prd"  *ngFor="let prd of products"></app-product>
     <hr/>
   </div>
-
   `
 
 })
