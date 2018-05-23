@@ -7,13 +7,13 @@ import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from './about/about.component';
 import { ProductListComponent } from "./product-list/product-list.component";
 import { ProductComponent } from './product/product.component';
-import { TimePipe } from "./shared/time.pipe";
+import { SharedModule } from "./shared/shared.module";
 
 //ES6 Module, Angular Module
 @NgModule({
-    imports: [BrowserModule,FormsModule],
+    imports: [BrowserModule,FormsModule,SharedModule],
     declarations: [AppComponent, HomeComponent, 
-        AboutComponent,ProductListComponent, ProductComponent,TimePipe],
+        AboutComponent,ProductListComponent, ProductComponent],
     providers: [],
     exports: [],
     bootstrap: [AppComponent]
