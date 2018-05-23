@@ -7,19 +7,8 @@ import { Component } from "@angular/core";
   template: `
   <h1>Products</h1>
   <div class="col-md-7">
-  <div *ngFor="let product of products" class="well">
-    <h3>{{product.brand | uppercase}}</h3>
-    <h3>{{product.model | lowercase}}</h3>
-    <b>{{product.price | currency}}</b>
-    <div [ngClass]="product.inStock? 'fg2':'fg'">
-      InStock: 
-      <input type="checkbox" [disabled]="true" [checked]="product.inStock"/>
-    </div>
-    <div>
-      {{product.lastUpdated | date:'MM-dd-yyyy hh:mm a'}}
-    </div>
+   <app-product [product] ="prd"  *ngFor="let prd of products"></app-product>
     <hr/>
-  </div>
   </div>
 
   `
