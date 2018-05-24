@@ -22,6 +22,4 @@ export class ProductListComponent {
     { id: 2, brand: 'Samsung', model: 'Galaxy S9', price: 600, inStock: true,lastUpdated:Date.now() },
     { id: 3, brand: 'Apple', model: 'Iphone X', price: 1000, inStock: false,lastUpdated:Date.now() }];
   }
-
-
 }

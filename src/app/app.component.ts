@@ -6,9 +6,10 @@ import { Component } from "@angular/core";
 @Component({
     selector: 'my-app',
     template: `
-     <app-product-list></app-product-list>
+     <app-user-list></app-user-list>
     `
 })
 export class AppComponent {
    
+
 }
