@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
 // snake casing
 // pipes: lowercase, uppercase, tiltecase, currency, date, json, async
@@ -17,9 +18,11 @@ export class ProductListComponent {
 
   products: any[];
 
-  constructor() {
-    this.products = [{ id: 1, brand: 'Nokia', model: 'N8', price: 100, inStock: true,lastUpdated:Date.now() },
-    { id: 2, brand: 'Samsung', model: 'Galaxy S9', price: 600, inStock: true,lastUpdated:Date.now() },
-    { id: 3, brand: 'Apple', model: 'Iphone X', price: 1000, inStock: false,lastUpdated:Date.now() }];
+  constructor(http:HttpClient) {
+     http.get("https://exp-rest-api.herokuapp.com/api/products/")
+     .subscribe(
+       res=>this.products=res["data"],
+       err=>console.log(err)
+     )
   }
 }
