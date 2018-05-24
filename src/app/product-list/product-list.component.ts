@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { ProductService } from "../shared/product.service";
 
 // snake casing
 // pipes: lowercase, uppercase, tiltecase, currency, date, json, async
@@ -18,11 +19,10 @@ export class ProductListComponent {
 
   products: any[];
 
-  constructor(http:HttpClient) {
-     http.get("https://exp-rest-api.herokuapp.com/api/products/")
-     .subscribe(
-       res=>this.products=res["data"],
-       err=>console.log(err)
-     )
+  constructor(svc:ProductService) {
+    svc.get().subscribe(
+      res => this.products = res["data"],
+      err => console.log(err)
+    );
   }
 }
