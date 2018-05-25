@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { ConsoleLogger } from "../shared/console.logger";
 
 //single line
 //multi line
@@ -8,7 +9,11 @@ import { Component } from "@angular/core";
 // expression, property, event binding, class, style and two way
 @Component({
     selector: 'app-home',
-    templateUrl:'./home.html'
+    templateUrl: './home.html'
 })
-export class HomeComponent { }
+export class HomeComponent {
+    constructor(logger: ConsoleLogger) {
+        logger.log("Inside home component");
+    }
+}
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ConsoleLogger } from '../shared/console.logger';
 
 @Component({
   selector: 'app-about',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
   styles: []
 })
 export class AboutComponent {
-
+  constructor(logger: ConsoleLogger) {
+    logger.warn("Component took lot of time to load");
+  }
 }
