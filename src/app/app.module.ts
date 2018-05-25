@@ -10,14 +10,13 @@ import { ProductComponent } from './product/product.component';
 import { SharedModule } from "./shared/shared.module";
 import { UserListComponent } from './user-list/user-list.component';
 import { HttpClientModule } from "@angular/common/http";
-import { ProductService } from "./shared/product.service";
 
 //ES6 Module, Angular Module
 @NgModule({
     imports: [BrowserModule, FormsModule, HttpClientModule, SharedModule],
     declarations: [AppComponent, HomeComponent,
         AboutComponent, ProductListComponent, ProductComponent, UserListComponent],
-    providers: [ProductService],
+    providers: [],
     exports: [],
     bootstrap: [AppComponent]
 })
