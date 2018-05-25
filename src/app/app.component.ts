@@ -6,8 +6,6 @@ import { Component } from "@angular/core";
 @Component({
     selector: 'my-app',
     template: `
-    <app-home></app-home>
-    <app-about></app-about>
      <app-product-list></app-product-list>
     `
 })
