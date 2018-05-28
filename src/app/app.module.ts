@@ -10,12 +10,14 @@ import { ProductComponent } from './product/product.component';
 import { SharedModule } from "./shared/shared.module";
 import { UserListComponent } from './user-list/user-list.component';
 import { HttpClientModule } from "@angular/common/http";
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 //ES6 Module, Angular Module
 @NgModule({
     imports: [BrowserModule, FormsModule, HttpClientModule, SharedModule],
     declarations: [AppComponent, HomeComponent,
-        AboutComponent, ProductListComponent, ProductComponent, UserListComponent],
+        AboutComponent, ProductListComponent, ProductComponent, UserListComponent, HeaderComponent, FooterComponent],
     providers: [],
     exports: [],
     bootstrap: [AppComponent]

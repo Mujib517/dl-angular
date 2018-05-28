@@ -1,7 +1,8 @@
 //SRP
 // a class should not have more than one reason to change
 class Wrap{
-	
+  
+  //Dependency Injection. Constructor injection
   constructor(v:Veggies,b:Bread,s:Sausages){
     
   }

@@ -8,6 +8,6 @@ export class ProductService {
   }
 
   get() {
-    return this.http.get("https://exp-rest-api.herokuapp.com/api/products/");
+    return this.http.get("https://exp-rest-api.herokuapp.com/api/products/");  
   }
 }

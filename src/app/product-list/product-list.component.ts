@@ -19,13 +19,16 @@ export class ProductListComponent {
 
   products: any[];
 
-  constructor(productSvc:ProductService) {
-    
-    productSvc.get().subscribe(
+  constructor(productSvc: ProductService) {
+
+    var obs = productSvc.get();
+
+    obs.subscribe(
       res => this.products = res["data"],
-      err => console.log(err)
+      err => console.log(err),
+      () => console.log("Completed")
     );
 
-    
+
   }
 }
