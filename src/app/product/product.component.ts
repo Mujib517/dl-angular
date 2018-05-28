@@ -5,7 +5,7 @@ import { Component, Input } from '@angular/core';
   selector: 'app-product',
   template: `
     <div class="well">
-      <h3>{{product.brand | uppercase}}</h3>
+      <h3><a [routerLink]="'/products/'+product._id">{{product.brand | uppercase}}</a></h3>
       <h3>{{product.model | lowercase}}</h3>
       <b>{{product.price | currency}}</b>
       <div [ngClass]="product.inStock? 'fg2':'fg'">
