@@ -3,12 +3,12 @@ import { Injectable } from "@angular/core";
 @Injectable()
 export class FileLogger {
 
-  constructor(private x: number) {
+  constructor() {
 
   }
 
   log(msg: any) {
-    console.log("File:", msg, this.x);
+    console.log("File:", msg);
   }
 
   warn(msg: any) {

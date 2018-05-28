@@ -10,7 +10,7 @@ import { Component } from "@angular/core";
     <app-header></app-header>
 
     <main class="container">
-     <app-product-list></app-product-list>
+     <router-outlet></router-outlet>
     </main>
 
     <app-footer></app-footer>
