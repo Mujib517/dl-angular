@@ -12,12 +12,13 @@ import { UserListComponent } from './user-list/user-list.component';
 import { HttpClientModule } from "@angular/common/http";
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { ContactComponent } from './contact/contact.component';
 
 //ES6 Module, Angular Module
 @NgModule({
     imports: [BrowserModule, FormsModule, HttpClientModule, SharedModule],
     declarations: [AppComponent, HomeComponent,
-        AboutComponent, ProductListComponent, ProductComponent, UserListComponent, HeaderComponent, FooterComponent],
+        AboutComponent, ProductListComponent, ProductComponent, UserListComponent, HeaderComponent, FooterComponent, ContactComponent],
     providers: [],
     exports: [],
     bootstrap: [AppComponent]
