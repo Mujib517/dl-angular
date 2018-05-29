@@ -10,7 +10,8 @@ import { ReviewsComponent } from "./reviews/reviews.component";
 import { SpecsComponent } from "./specs/specs.component";
 
 const PRODUCT_ROUTES: Route[] = [{ path: 'reviews', component: ReviewsComponent },
-{ path: 'specs', component: SpecsComponent }];
+{ path: 'specs', component: SpecsComponent },
+{ path: '', redirectTo: 'reviews',pathMatch:'full' }];
 
 const ROUTES: Route[] = [{ path: '', component: HomeComponent },
 { path: 'about', component: AboutComponent },
