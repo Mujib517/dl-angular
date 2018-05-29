@@ -21,6 +21,11 @@ import { ActivatedRoute } from '@angular/router';
         </div>
       </div>
     </div>
+
+    <ul class="nav-tabs nav">
+      <li class="active"><a routerLink="reviews">Reviews</a></li>
+      <li><a routerLink="specs">Specs</a></li>
+    </ul>
   `
 })
 export class ProductDetailComponent {
@@ -29,7 +34,7 @@ export class ProductDetailComponent {
 
   constructor(productSvc: ProductService, route: ActivatedRoute) {
     let id = route.snapshot.params.id;
-    
+
     productSvc.getById(id)
       .subscribe(res => this.product = res,
         err => console.log(err));
