@@ -16,6 +16,8 @@ import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { SpecsComponent } from './specs/specs.component';
+import { ReviewsComponent } from './reviews/reviews.component';
 
 
 const ROUTES = [{ path: '', component: HomeComponent },
@@ -34,7 +36,7 @@ const ROUTES = [{ path: '', component: HomeComponent },
     imports: [BrowserModule, FormsModule, HttpClientModule, SharedModule,
         RouterModule.forRoot(ROUTES)],
     declarations: [AppComponent, HomeComponent,
-        AboutComponent, ProductListComponent, ProductComponent, UserListComponent, HeaderComponent, FooterComponent, ContactComponent, NotFoundComponent, ProductDetailComponent],
+        AboutComponent, ProductListComponent, ProductComponent, UserListComponent, HeaderComponent, FooterComponent, ContactComponent, NotFoundComponent, ProductDetailComponent, SpecsComponent, ReviewsComponent],
     providers: [],
     exports: [],
     bootstrap: [AppComponent]
