@@ -15,13 +15,17 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 
 const ROUTES = [{ path: '', component: HomeComponent },
 { path: 'about', component: AboutComponent },
 { path: 'contact', component: ContactComponent },
 { path: 'products', component: ProductListComponent },
+{ path: 'products/:id', component: ProductDetailComponent },
 { path: '**', component: NotFoundComponent }
+]
+
 //{ path: '**', redirectTo: '' }];
 
 
@@ -30,7 +34,7 @@ const ROUTES = [{ path: '', component: HomeComponent },
     imports: [BrowserModule, FormsModule, HttpClientModule, SharedModule,
         RouterModule.forRoot(ROUTES)],
     declarations: [AppComponent, HomeComponent,
-        AboutComponent, ProductListComponent, ProductComponent, UserListComponent, HeaderComponent, FooterComponent, ContactComponent, NotFoundComponent],
+        AboutComponent, ProductListComponent, ProductComponent, UserListComponent, HeaderComponent, FooterComponent, ContactComponent, NotFoundComponent, ProductDetailComponent],
     providers: [],
     exports: [],
     bootstrap: [AppComponent]
