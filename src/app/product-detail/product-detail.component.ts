@@ -23,8 +23,8 @@ import { ActivatedRoute } from '@angular/router';
     </div>
 
     <ul class="nav-tabs nav">
-      <li class="active"><a routerLink="reviews">Reviews</a></li>
-      <li><a routerLink="specs">Specs</a></li>
+      <li routerLinkActive="active"><a routerLink="reviews">Reviews</a></li>
+      <li routerLinkActive="active"><a routerLink="specs">Specs</a></li>
     </ul>
     <div>
       <router-outlet></router-outlet>
