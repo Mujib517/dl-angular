@@ -5,18 +5,23 @@ import { ContactComponent } from "./contact/contact.component";
 import { ProductListComponent } from "./product-list/product-list.component";
 import { ProductDetailComponent } from "./product-detail/product-detail.component";
 import { NotFoundComponent } from "./not-found/not-found.component";
-import { RouterModule } from "@angular/router";
+import { RouterModule, Route } from "@angular/router";
+import { ReviewsComponent } from "./reviews/reviews.component";
+import { SpecsComponent } from "./specs/specs.component";
 
+const PRODUCT_ROUTES: Route[] = [{ path: 'reviews', component: ReviewsComponent },
+{ path: 'specs', component: SpecsComponent }];
 
-const ROUTES = [{ path: '', component: HomeComponent },
+const ROUTES: Route[] = [{ path: '', component: HomeComponent },
 { path: 'about', component: AboutComponent },
 { path: 'contact', component: ContactComponent },
 { path: 'products', component: ProductListComponent },
-{ path: 'products/:id', component: ProductDetailComponent },
+{ path: 'products/:id', component: ProductDetailComponent, children: PRODUCT_ROUTES },
 { path: '**', component: NotFoundComponent }
-]
+];
 
 @NgModule({
-   imports:[RouterModule.forRoot(ROUTES)]
+  imports: [RouterModule.forRoot(ROUTES)],
+  exports: [RouterModule]
 })
-export class AppRouterModule{}
+export class AppRouterModule { }

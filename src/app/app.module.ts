@@ -18,23 +18,16 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { SpecsComponent } from './specs/specs.component';
 import { ReviewsComponent } from './reviews/reviews.component';
+import { AppRouterModule } from "./app.router.module";
 
 
-const ROUTES = [{ path: '', component: HomeComponent },
-{ path: 'about', component: AboutComponent },
-{ path: 'contact', component: ContactComponent },
-{ path: 'products', component: ProductListComponent },
-{ path: 'products/:id', component: ProductDetailComponent },
-{ path: '**', component: NotFoundComponent }
-]
 
 //{ path: '**', redirectTo: '' }];
 
 
 //ES6 Module, Angular Module
 @NgModule({
-    imports: [BrowserModule, FormsModule, HttpClientModule, SharedModule,
-        RouterModule.forRoot(ROUTES)],
+    imports: [BrowserModule, FormsModule, HttpClientModule, SharedModule,AppRouterModule],
     declarations: [AppComponent, HomeComponent,
         AboutComponent, ProductListComponent, ProductComponent, UserListComponent, HeaderComponent, FooterComponent, ContactComponent, NotFoundComponent, ProductDetailComponent, SpecsComponent, ReviewsComponent],
     providers: [],

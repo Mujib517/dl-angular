@@ -26,6 +26,7 @@ import { ActivatedRoute } from '@angular/router';
       <li class="active"><a routerLink="reviews">Reviews</a></li>
       <li><a routerLink="specs">Specs</a></li>
     </ul>
+    <div><router-outlet></router-outlet></div>
   `
 })
 export class ProductDetailComponent {
