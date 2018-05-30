@@ -1,6 +1,5 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from "./app.component";
@@ -28,10 +27,10 @@ import { LazyComponent } from "./lazy/lazy.component";
 
 //ES6 Module, Angular Module
 @NgModule({
-    imports: [BrowserModule, FormsModule, HttpClientModule, SharedModule, AppRouterModule],
+    imports: [BrowserModule, SharedModule, AppRouterModule],
     declarations: [AppComponent, HomeComponent,
         AboutComponent, ProductListComponent,
-        ProductComponent, UserListComponent, HeaderComponent,
+        ProductComponent, HeaderComponent,
         FooterComponent, ContactComponent, NotFoundComponent,
         ProductDetailComponent, SpecsComponent, ReviewsComponent, LazyComponent],
     providers: [],
