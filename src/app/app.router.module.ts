@@ -8,15 +8,16 @@ import { NotFoundComponent } from "./not-found/not-found.component";
 import { RouterModule, Route } from "@angular/router";
 import { ReviewsComponent } from "./reviews/reviews.component";
 import { SpecsComponent } from "./specs/specs.component";
+import { ProductResolver } from "./shared/product.resolver";
 
 const PRODUCT_ROUTES: Route[] = [{ path: 'reviews', component: ReviewsComponent },
 { path: 'specs', component: SpecsComponent },
-{ path: '', redirectTo: 'reviews',pathMatch:'full' }];
+{ path: '', redirectTo: 'reviews', pathMatch: 'full' }];
 
 const ROUTES: Route[] = [{ path: '', component: HomeComponent },
 { path: 'about', component: AboutComponent },
 { path: 'contact', component: ContactComponent },
-{ path: 'products', component: ProductListComponent },
+{ path: 'products', component: ProductListComponent, resolve: { products: ProductResolver } },
 { path: 'products/:id', component: ProductDetailComponent, children: PRODUCT_ROUTES },
 { path: '**', component: NotFoundComponent }
 ];

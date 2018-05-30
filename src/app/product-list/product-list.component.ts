@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { HttpClient, HttpHandler } from "@angular/common/http";
 import { ProductService } from "../shared/product.service";
+import { ActivatedRoute } from "@angular/router";
 
 // snake casing
 // pipes: lowercase, uppercase, tiltecase, currency, date, json, async
@@ -19,15 +20,19 @@ export class ProductListComponent {
 
   products: any[];
 
-  constructor(productSvc: ProductService) {
+  constructor(private route: ActivatedRoute) {
 
-    var obs = productSvc.get();
+    this.products = this.route.snapshot.data.products;
 
-    obs.subscribe(
-      res => this.products = res["data"],
-      err => console.log(err),
-      () => console.log("Completed")
-    );
+    console.log(this.route.snapshot.data);
+
+    // var obs = productSvc.get();
+
+    // obs.subscribe(
+    //   res => this.products = res["data"],
+    //   err => console.log(err),
+    //   () => console.log("Completed")
+    // );
 
 
   }
