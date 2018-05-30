@@ -19,6 +19,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { SpecsComponent } from './specs/specs.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { AppRouterModule } from "./app.router.module";
+import { LazyComponent } from "./lazy/lazy.component";
 
 
 
@@ -27,9 +28,12 @@ import { AppRouterModule } from "./app.router.module";
 
 //ES6 Module, Angular Module
 @NgModule({
-    imports: [BrowserModule, FormsModule, HttpClientModule, SharedModule,AppRouterModule],
+    imports: [BrowserModule, FormsModule, HttpClientModule, SharedModule, AppRouterModule],
     declarations: [AppComponent, HomeComponent,
-        AboutComponent, ProductListComponent, ProductComponent, UserListComponent, HeaderComponent, FooterComponent, ContactComponent, NotFoundComponent, ProductDetailComponent, SpecsComponent, ReviewsComponent],
+        AboutComponent, ProductListComponent,
+        ProductComponent, UserListComponent, HeaderComponent,
+        FooterComponent, ContactComponent, NotFoundComponent,
+        ProductDetailComponent, SpecsComponent, ReviewsComponent, LazyComponent],
     providers: [],
     exports: [],
     bootstrap: [AppComponent]

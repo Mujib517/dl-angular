@@ -13,6 +13,7 @@ import { Component } from '@angular/core';
           <li><a routerLink="/about">About</a></li>
           <li><a routerLink="/products">Products</a></li>
           <li><a routerLink="/contact">Contact</a></li>
+          <li><a routerLink="/lazy">Lazy</a></li>
       </ul>
   </nav>
 </header>
