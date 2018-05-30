@@ -39,7 +39,11 @@ export class ProductDetailComponent {
     let id = route.snapshot.params.id;
 
     productSvc.getById(id)
-      .subscribe(res => this.product = res,
+      .subscribe(res => {
+        this.product = res;
+        productSvc.reviews = res["reviews"];
+      }
+        ,
         err => console.log(err));
   }
 }
