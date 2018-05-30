@@ -9,6 +9,7 @@ import { ActivatedRoute } from "@angular/router";
   selector: 'app-product-list',
   template: `
   <h1>Products</h1>
+  <a routerLink="/products/new" class="btn btn-primary">Add New Product</a>
   <div class="col-md-7">
    <app-product [product] ="prd"  *ngFor="let prd of products"></app-product>
     <hr/>
@@ -23,9 +24,6 @@ export class ProductListComponent {
   constructor(private route: ActivatedRoute) {
 
     this.products = this.route.snapshot.data.products;
-
-    console.log(this.route.snapshot.data);
-
     // var obs = productSvc.get();
 
     // obs.subscribe(

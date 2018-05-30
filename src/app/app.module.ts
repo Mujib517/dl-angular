@@ -19,6 +19,7 @@ import { SpecsComponent } from './specs/specs.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { AppRouterModule } from "./app.router.module";
 import { LazyComponent } from "./lazy/lazy.component";
+import { NewProductComponent } from "./new-product/new-product.component";
 
 
 
@@ -32,7 +33,8 @@ import { LazyComponent } from "./lazy/lazy.component";
         AboutComponent, ProductListComponent,
         ProductComponent, HeaderComponent,
         FooterComponent, ContactComponent, NotFoundComponent,
-        ProductDetailComponent, SpecsComponent, ReviewsComponent, LazyComponent],
+        ProductDetailComponent, SpecsComponent, ReviewsComponent, LazyComponent,
+        NewProductComponent],
     providers: [],
     exports: [],
     bootstrap: [AppComponent]
