@@ -1,21 +1,30 @@
 <h1>Add New Component</h1>
 
+<div class="alert alert-success" *ngIf="isSuccess">
+  Successfully saved product
+</div>
+
+<div class="alert alert-danger" *ngIf="hasError">
+  Failed to save product. Please try again later
+</div>
+
+
 <div class="col-md-5">
   <div class="form-group">
-    <input type="text" placeholder="Brand" class="form-control">
+    <input type="text" placeholder="Brand" class="form-control" [(ngModel)]="product.brand">
   </div>
   <div class="form-group">
-    <input type="text" placeholder="Model" class="form-control">
+    <input type="text" placeholder="Model" class="form-control" [(ngModel)]="product.model">
   </div>
   <div class="form-group">
-    <input type="text" placeholder="Price" class="form-control">
+    <input type="text" placeholder="Price" class="form-control" [(ngModel)]="product.price">
   </div>
   <div class="form-group">
     InStock:
-    <input type="checkbox" />
+    <input type="checkbox" [(ngModel)]="product.inStock" />
   </div>
   <div class="form-group">
-    <button class="btn btn-info">
+    <button class="btn btn-info" (click)="onSave()">
       Save Product
     </button>
   </div>

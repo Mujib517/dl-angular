@@ -19,4 +19,9 @@ export class ProductService {
   getById(id: string) {
     return this.http.get("https://exp-rest-api.herokuapp.com/api/products/" + id);
   }
+
+  save(product: any) {
+    return this.http.post("https://exp-rest-api.herokuapp.com/api/products/", product);
+  }
+
 }
