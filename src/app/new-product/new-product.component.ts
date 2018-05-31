@@ -20,10 +20,11 @@ export class NewProductComponent {
         res => {
           console.log(res);
           this.product = {};
+          this.hasError = false;
           this.isSuccess = true;
         },
         err => {
-          console.log(err);
+          this.isSuccess = false;
           this.hasError = true;
         });
   }
