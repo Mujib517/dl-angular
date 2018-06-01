@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import {FormsModule} from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
@@ -21,21 +21,17 @@ import { ReviewsComponent } from './reviews/reviews.component';
 import { AppRouterModule } from "./app.router.module";
 import { LazyComponent } from "./lazy/lazy.component";
 import { NewProductComponent } from "./new-product/new-product.component";
-
-
-
-//{ path: '**', redirectTo: '' }];
-
+import { ReactiveFormComponent } from "./reactive-form/reactive-form.component";
 
 //ES6 Module, Angular Module
 @NgModule({
-    imports: [BrowserModule, SharedModule, AppRouterModule,FormsModule],
+    imports: [BrowserModule, SharedModule, AppRouterModule, FormsModule, ReactiveFormsModule],
     declarations: [AppComponent, HomeComponent,
         AboutComponent, ProductListComponent,
         ProductComponent, HeaderComponent,
         FooterComponent, ContactComponent, NotFoundComponent,
         ProductDetailComponent, SpecsComponent, ReviewsComponent, LazyComponent,
-        NewProductComponent],
+        NewProductComponent, ReactiveFormComponent],
     providers: [],
     exports: [],
     bootstrap: [AppComponent]

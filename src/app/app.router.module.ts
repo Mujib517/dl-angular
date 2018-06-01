@@ -11,6 +11,7 @@ import { SpecsComponent } from "./specs/specs.component";
 import { ProductResolver } from "./shared/product.resolver";
 import { LazyComponent } from "./lazy/lazy.component";
 import { NewProductComponent } from "./new-product/new-product.component";
+import { ReactiveFormComponent } from "./reactive-form/reactive-form.component";
 
 const PRODUCT_ROUTES: Route[] = [{ path: 'reviews', component: ReviewsComponent },
 { path: 'specs', component: SpecsComponent },
@@ -21,6 +22,7 @@ const ROUTES: Route[] = [{ path: '', component: HomeComponent },
 { path: 'contact', component: ContactComponent },
 { path: 'products', component: ProductListComponent, resolve: { products: ProductResolver } },
 { path: 'products/new', component: NewProductComponent },
+{ path: 'products/reactive', component: ReactiveFormComponent },
 { path: 'products/:id', component: ProductDetailComponent, children: PRODUCT_ROUTES },
 { path: 'lazy', component: LazyComponent, loadChildren: './lazy/lazy.module#LazyModule' },
 { path: '**', component: NotFoundComponent }
