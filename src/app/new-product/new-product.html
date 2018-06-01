@@ -17,6 +17,7 @@
       <th>Valid</th>
       <th>Invalid</th>
       <th>Dirty</th>
+      <th>Pristine</th>
       <th>Touched</th>
       <th>Erorr</th>
     </tr>
@@ -27,6 +28,7 @@
       <td>{{brand.valid}}</td>
       <td>{{brand.invalid}}</td>
       <td>{{brand.dirty}}</td>
+      <td>{{brand.pristine}}</td>
       <td>{{brand.touched}}</td>
       <td>{{brand.errors | json}}</td>
     </tr>
@@ -38,18 +40,18 @@
   <div class="col-md-5">
     <div class="form-group">
       <input #brand="ngModel" type="text" required="true" minlength="3" maxlength="10" name="brand" placeholder="Brand" class="form-control" [(ngModel)]="product.brand">
-      <span class="text-danger" *ngIf="brand.dirty && brand.errors?.required">Required</span>
-      <span class="text-danger" *ngIf="brand.dirty && brand.errors?.minlength">Min 3 Chars</span>
-      <span class="text-danger" *ngIf="brand.dirty && brand.errors?.maxlength">Max 10 Chars</span>
+      <span class="text-danger" *ngIf="brand.touched && brand.errors?.required">Required</span>
+      <span class="text-danger" *ngIf="brand.touched && brand.errors?.minlength">Min 3 Chars</span>
+      <span class="text-danger" *ngIf="brand.touched && brand.errors?.maxlength">Max 10 Chars</span>
     </div>
     <div class="form-group">
       <input #model="ngModel" type="text" required="true" name="model" placeholder="Model" class="form-control" [(ngModel)]="product.model">
-      <span class="text-danger" *ngIf="model.dirty && model.invalid">Required</span>
+      <span class="text-danger" *ngIf="model.touched && model.invalid">Required</span>
     </div>
     <div class="form-group">
       <input #price="ngModel" pattern="[0-9]{3,6}" type="text" required="true" name="price" placeholder="Price" class="form-control" [(ngModel)]="product.price">
-      <span class="text-danger" *ngIf="price.dirty && price.errors?.required">Required</span>
-      <span class="text-danger" *ngIf="price.dirty && price.errors?.pattern">Invalid Price</span>
+      <span class="text-danger" *ngIf="price.touched && price.errors?.required">Required</span>
+      <span class="text-danger" *ngIf="price.touched && price.errors?.pattern">Invalid Price</span>
     </div>
     <div class="form-group">
       InStock:
