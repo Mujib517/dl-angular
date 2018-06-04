@@ -15,6 +15,9 @@ import { Component } from '@angular/core';
           <li><a routerLink="/contact">Contact</a></li>
           <li><a routerLink="/lazy">Lazy</a></li>
       </ul>
+      <div class="pull-right">
+        <button routerLink="/login" class="btn btn-sm btn-danger">Login</button>
+      </div>
   </nav>
 </header>
   `,

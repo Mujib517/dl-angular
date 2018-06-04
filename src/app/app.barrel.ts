@@ -16,3 +16,4 @@ export { ReviewsComponent } from './reviews/reviews.component';
 export { LazyComponent } from "./lazy/lazy.component";
 export { NewProductComponent } from "./new-product/new-product.component";
 export { ReactiveFormComponent } from "./reactive-form/reactive-form.component";
+export { LoginComponent } from './login/login.component';
