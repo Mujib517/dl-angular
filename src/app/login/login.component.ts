@@ -1,10 +1,15 @@
 import { Component } from '@angular/core'
 import { UserService } from '../shared/user.service';
+import { Router } from '@angular/router';
 
 
 @Component({
   selector: 'app-login',
   template: `<h1>Login</h1>
+
+  <div *ngIf="failed" class="alert alert-danger">
+    Wrong username or password
+  </div>
 
   <div class="col-md-6">
     <div class="form-group">
@@ -24,14 +29,18 @@ import { UserService } from '../shared/user.service';
 export class LoginComponent {
 
   user: any = {};
+  failed: boolean;
 
-  constructor(private userSvc: UserService) { }
+  constructor(private userSvc: UserService, private router: Router) { }
 
   onLogin() {
     this.userSvc.login(this.user)
       .subscribe(
-        res => this.userSvc.saveToken(res["token"]),
-        err => console.log(err)
+        res => {
+          this.userSvc.saveToken(res["token"]);
+          this.router.navigate(["products"]);
+        },
+        err => this.failed = true
       );
   }
 }

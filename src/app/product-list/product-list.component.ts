@@ -26,14 +26,11 @@ export class ProductListComponent {
   constructor(private route: ActivatedRoute, private userSvc: UserService,
     private router: Router) {
 
-    if (this.userSvc.isLoggedin()) {
+    if (this.userSvc.isLoggedin()) 
       this.products = this.route.snapshot.data.products;
-    }
-    else {
+    else 
       this.router.navigate(["login"]);
-    }
-
-
+    
     // var obs = productSvc.get();
 
     // obs.subscribe(

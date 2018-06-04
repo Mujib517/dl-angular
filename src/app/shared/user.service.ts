@@ -1,8 +1,14 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Injectable()
 export class UserService {
+
+
+  logout(): void {
+    localStorage.removeItem("token");
+  }
 
   constructor(private http: HttpClient) { }
 
@@ -19,6 +25,6 @@ export class UserService {
   }
 
   isLoggedin(): boolean {
-    return !! localStorage.getItem("token");
+    return !!localStorage.getItem("token");
   }
 }
