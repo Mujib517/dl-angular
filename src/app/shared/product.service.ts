@@ -12,11 +12,7 @@ export class ProductService {
   }
 
   get() {
-
-
-    var hdrs = { 'authorization': this.userSvc.getToken() };
-
-    return this.http.get("https://exp-rest-api.herokuapp.com/api/products/", { headers: hdrs })
+    return this.http.get("https://exp-rest-api.herokuapp.com/api/products/")
       .pipe(map(res => res["data"]))
       .pipe(retry(3));
   }
