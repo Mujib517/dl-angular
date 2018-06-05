@@ -58,6 +58,9 @@
       <input type="checkbox" name="inStock" [(ngModel)]="product.inStock" />
     </div>
     <div class="form-group">
+      <input type="file" (change)="handleUpload($event.target.files)"/>
+    </div>
+    <div class="form-group">
       <button class="btn btn-info" (click)="onSave()" [disabled]="frm.invalid">
         Save Product
       </button>

@@ -8,6 +8,11 @@ import { Component, Input } from '@angular/core';
       <h3><a [routerLink]="'/products/'+product._id">{{product.brand | uppercase}}</a></h3>
       <h3>{{product.model | lowercase}}</h3>
       <b>{{product.price | currency}}</b>
+
+      <div *ngIf="product.image">
+        <img width="150" height="150" class="img img-thumbnail" [src]="product.image"/>
+      </div>
+      
       <div [ngClass]="product.inStock? 'fg2':'fg'">
         InStock: 
         <input type="checkbox" [disabled]="true" [checked]="product.inStock"/>

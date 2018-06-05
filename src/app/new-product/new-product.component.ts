@@ -13,12 +13,9 @@ export class NewProductComponent {
   constructor(private productSvc: ProductService) { }
 
   onSave() {
-    console.log(this.product);
-
     this.productSvc.save(this.product)
       .subscribe(
         res => {
-          console.log(res);
           this.product = {};
           this.hasError = false;
           this.isSuccess = true;
@@ -27,5 +24,9 @@ export class NewProductComponent {
           this.isSuccess = false;
           this.hasError = true;
         });
+  }
+
+  handleUpload(files) {
+    this.product.file = files[0];
   }
 }

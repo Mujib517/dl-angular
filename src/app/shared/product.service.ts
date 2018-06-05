@@ -23,7 +23,18 @@ export class ProductService {
   }
 
   save(product: any) {
-    return this.http.post("https://exp-rest-api.herokuapp.com/api/products/", product);
+
+    const form: FormData = new FormData();
+
+    form.append("brand", product.brand);
+    form.append("price", product.price);
+    form.append("model", product.model);
+    form.append("inStock", product.inStock);
+    form.append("img", product.file);
+
+    var hdrs = {};
+
+    return this.http.post("https://exp-rest-api.herokuapp.com/api/products/", form,{headers:hdrs});
   }
 
 }
