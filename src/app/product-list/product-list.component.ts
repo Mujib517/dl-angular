@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { HttpClient, HttpHandler } from "@angular/common/http";
 import { ProductService } from "../shared/product.service";
 import { ActivatedRoute, Router } from "@angular/router";
@@ -19,14 +19,15 @@ import { UserService } from "../shared/user.service";
   `
 
 })
-export class ProductListComponent {
+export class ProductListComponent implements OnInit {
 
   products: any[];
 
   constructor(private route: ActivatedRoute, private userSvc: UserService,
-    private router: Router) {
+    private router: Router) { }
 
-    if (this.userSvc.isLoggedin()) 
+    ngOnInit(){
+      if (this.userSvc.isLoggedin()) 
       this.products = this.route.snapshot.data.products;
     else 
       this.router.navigate(["login"]);
@@ -39,6 +40,5 @@ export class ProductListComponent {
     //   () => console.log("Completed")
     // );
 
-
-  }
+    }
 }

@@ -11,7 +11,7 @@ import {
     ProductComponent, HeaderComponent,
     FooterComponent, ContactComponent, NotFoundComponent,
     ProductDetailComponent, SpecsComponent, ReviewsComponent, LazyComponent,
-    NewProductComponent, ReactiveFormComponent,LoginComponent
+    NewProductComponent, ReactiveFormComponent,LoginComponent,CounterComponent
 } from './app.barrel';
 
 const COMP_IMPORTS = [AppComponent, HomeComponent,
@@ -19,7 +19,7 @@ const COMP_IMPORTS = [AppComponent, HomeComponent,
     ProductComponent, HeaderComponent,
     FooterComponent, ContactComponent, NotFoundComponent,
     ProductDetailComponent, SpecsComponent, ReviewsComponent, LazyComponent,
-    NewProductComponent, ReactiveFormComponent,LoginComponent];
+    NewProductComponent, ReactiveFormComponent,LoginComponent,CounterComponent];
 
 //ES6 Module, Angular Module
 @NgModule({
