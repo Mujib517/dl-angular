@@ -18,7 +18,7 @@ import { Router } from '@angular/router';
           <li><a routerLink="/lazy">Lazy</a></li>
       </ul>
       <div class="pull-right">
-        <button routerLink="/login" class="btn btn-sm btn-danger">Login</button>
+        <button *ngIf="!isLoggedin" routerLink="/login" class="btn btn-sm btn-danger">Login</button>
             &nbsp;
         <button *ngIf="isLoggedin" (click)="onLogout()" class="btn btn-sm btn-danger">Logout</button>
       </div>
@@ -31,8 +31,10 @@ export class HeaderComponent {
 
     isLoggedin: boolean;
 
-    constructor(private userSvc: UserService, private router: Router) {
-        this.isLoggedin = userSvc.isLoggedin();
+    constructor(private userSvc: UserService, private router: Router) { }
+
+    ngOnInit() {
+        this.userSvc.isAuthenticated.subscribe(res => this.isLoggedin = res);
     }
 
 

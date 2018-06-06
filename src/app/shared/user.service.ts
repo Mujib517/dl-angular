@@ -1,13 +1,16 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
+import { Subject } from "rxjs";
 
 @Injectable()
 export class UserService {
 
+  isAuthenticated: Subject<boolean> = new Subject();
 
   logout(): void {
     localStorage.removeItem("token");
+    this.isAuthenticated.next(false);
   }
 
   constructor(private http: HttpClient) { }
@@ -17,6 +20,7 @@ export class UserService {
   }
 
   saveToken(token: string) {
+    this.isAuthenticated.next(true);
     localStorage.setItem("token", token);
   }
 
