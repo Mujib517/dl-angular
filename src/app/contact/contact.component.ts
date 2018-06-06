@@ -4,6 +4,9 @@ import { Component } from '@angular/core';
   selector: 'app-contact',
   template: `
    <h1>Contact Page</h1>
+   <h1 [dlShow]="name">Heading</h1>
   `
 })
-export class ContactComponent {}
+export class ContactComponent {
+  name:string="akjfkdaj";
+}
