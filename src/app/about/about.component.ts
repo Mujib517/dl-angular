@@ -19,6 +19,7 @@ import { ConsoleLogger } from '../shared/console.logger';
 export class AboutComponent {
   count: number = 0;
   interval: any;
+  //asynchrnous operation: timers, web svc calls, db, events
 
   inc() {
     this.count++;

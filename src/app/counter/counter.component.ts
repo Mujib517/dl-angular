@@ -3,7 +3,9 @@ import { Component, Input, SimpleChange } from '@angular/core'
 
 @Component({
   selector: 'app-counter',
-  template: `<h1>{{count}}</h1>`
+  template: `
+  <h1>Counter Component</h1>
+  <h1>{{count}}</h1>`
 })
 
 export class CounterComponent {
