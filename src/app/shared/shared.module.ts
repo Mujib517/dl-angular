@@ -9,13 +9,14 @@ import { UserService } from "./user.service";
 import { AppInterceptor } from "./app.interceptor";
 import { ProductGaurd } from "./product.gaurd";
 import { ShowDirective } from "./show.directive";
+import { BorderDirective } from "./border.directive";
 
 @NgModule({
-  declarations: [TimePipe,ShowDirective],
+  declarations: [TimePipe,ShowDirective,BorderDirective],
   imports: [HttpClientModule],
   providers: [ProductService, ProductResolver,ProductGaurd,
     UserService, { provide: ConsoleLogger, useClass: FileLogger },
     { provide: HTTP_INTERCEPTORS, useClass: AppInterceptor, multi: true }],
-  exports: [TimePipe,ShowDirective]
+  exports: [TimePipe,ShowDirective,BorderDirective]
 })
 export class SharedModule { }

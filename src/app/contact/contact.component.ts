@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-contact',
   template: `
-   <h1>Contact Page</h1>
+   <h1 dlBorder>Contact Page</h1>
    <h1 [dlShow]="name">Heading</h1>
   `
 })
