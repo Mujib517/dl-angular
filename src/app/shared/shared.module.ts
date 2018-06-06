@@ -7,11 +7,12 @@ import { ProductResolver } from "./product.resolver";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { UserService } from "./user.service";
 import { AppInterceptor } from "./app.interceptor";
+import { ProductGaurd } from "./product.gaurd";
 
 @NgModule({
   declarations: [TimePipe],
   imports: [HttpClientModule],
-  providers: [ProductService, ProductResolver,
+  providers: [ProductService, ProductResolver,ProductGaurd,
     UserService, { provide: ConsoleLogger, useClass: FileLogger },
     { provide: HTTP_INTERCEPTORS, useClass: AppInterceptor, multi: true }],
   exports: [TimePipe]
