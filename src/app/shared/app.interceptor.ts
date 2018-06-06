@@ -11,10 +11,12 @@ export class AppInterceptor implements HttpInterceptor {
   constructor(private userSvc: UserService) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    var hdrs = { 'authorization': this.userSvc.getToken() };
 
-    let newReq = req.clone({ setHeaders: hdrs });
-
-    return next.handle(newReq);
+    if (this.userSvc.getToken()) {
+      var hdrs = { 'authorization': this.userSvc.getToken() };
+      let newReq = req.clone({ setHeaders: hdrs });
+      return next.handle(newReq);
+    }
+    return next.handle(req);
   }
 }
