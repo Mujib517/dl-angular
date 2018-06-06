@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { map, retry } from 'rxjs/operators';
 import { UserService } from "./user.service";
+import { Product } from "../models/product.model";
 
 @Injectable()
 export class ProductService {
@@ -12,14 +13,14 @@ export class ProductService {
   }
 
   get() {
-    return this.http.get("https://exp-rest-api.herokuapp.com/api/products/")
+    return this.http.get<Product[]>("https://exp-rest-api.herokuapp.com/api/products/")
       .pipe(map(res => res["data"]))
       .pipe(retry(3));
   }
 
   getById(id: string) {
 
-    return this.http.get("https://exp-rest-api.herokuapp.com/api/products/" + id);
+    return this.http.get<Product>("https://exp-rest-api.herokuapp.com/api/products/" + id);
   }
 
   save(product: any) {

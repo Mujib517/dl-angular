@@ -3,6 +3,7 @@ import { HttpClient, HttpHandler } from "@angular/common/http";
 import { ProductService } from "../shared/product.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { UserService } from "../shared/user.service";
+import { Product } from "../models/product.model";
 
 // snake casing
 // pipes: lowercase, uppercase, tiltecase, currency, date, json, async
@@ -21,17 +22,21 @@ import { UserService } from "../shared/user.service";
 })
 export class ProductListComponent implements OnInit {
 
-  products: any[];
+  products: Product[];
 
   constructor(private route: ActivatedRoute, private userSvc: UserService,
     private router: Router) { }
 
-    ngOnInit(){
-      if (this.userSvc.isLoggedin()) 
+  ngOnInit() {
+
+
+
+    if (this.userSvc.isLoggedin())
       this.products = this.route.snapshot.data.products;
-    else 
+    else
       this.router.navigate(["login"]);
-    
+
+
     // var obs = productSvc.get();
 
     // obs.subscribe(
@@ -40,5 +45,5 @@ export class ProductListComponent implements OnInit {
     //   () => console.log("Completed")
     // );
 
-    }
+  }
 }
