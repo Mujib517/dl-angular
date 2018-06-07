@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ConsoleLogger } from "../shared/console.logger";
 
 //single line
@@ -11,9 +11,11 @@ import { ConsoleLogger } from "../shared/console.logger";
     selector: 'app-home',
     templateUrl: './home.html'
 })
-export class HomeComponent {
-    constructor(logger: ConsoleLogger) {
-        logger.log("Inside home component");
+export class HomeComponent implements OnInit {
+    constructor(private logger: ConsoleLogger) { }
+
+    ngOnInit() {
+        this.logger.log("Inside home component");
     }
 }
 
