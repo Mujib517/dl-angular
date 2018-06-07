@@ -35,13 +35,15 @@ export class ProductDetailComponent {
 
   product: any;
 
-  constructor(productSvc: ProductService, route: ActivatedRoute) {
-    let id = route.snapshot.params.id;
+  constructor(private productSvc: ProductService, private route: ActivatedRoute) { }
 
-    productSvc.getById(id)
+  ngOnInit() {
+    let id = this.route.snapshot.params.id;
+
+    this.productSvc.getById(id)
       .subscribe(res => {
         this.product = res;
-        productSvc.reviews = res["reviews"];
+        this.productSvc.reviews = res["reviews"];
       }
         ,
         err => console.log(err));
