@@ -26,7 +26,7 @@ const ROUTES: Route[] = [{ path: '', component: HomeComponent },
   path: 'products', component: ProductListComponent,
   resolve: { products: ProductResolver }
 },
-{ path: 'products/new', component: NewProductComponent, canDeactivate: [ProductGaurd] },
+{ path: 'products/new', component: NewProductComponent },
 { path: 'products/reactive', component: ReactiveFormComponent },
 { path: 'products/:id', component: ProductDetailComponent, children: PRODUCT_ROUTES },
 { path: 'lazy', component: LazyComponent, loadChildren: './lazy/lazy.module#LazyModule' },

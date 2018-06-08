@@ -11,7 +11,7 @@ import { Product } from "../models/product.model";
   selector: 'app-product-list',
   template: `
   <h1>Products</h1>
-  <a routerLink="/products/new" class="btn btn-primary">Add New Product</a>
+  <a routerLink="/products/new" class="btn btn-info">Add New Product</a>
   <a routerLink="/products/reactive" class="btn btn-primary">Reactive Form</a>
   <div class="col-md-7">
    <app-product [product] ="prd"  *ngFor="let prd of products"></app-product>

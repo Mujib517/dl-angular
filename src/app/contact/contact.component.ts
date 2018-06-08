@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
   `
 })
 export class ContactComponent {
-  name: string = "";
+  name: string = "abc";
   count: number;
 
   // constructor(){
