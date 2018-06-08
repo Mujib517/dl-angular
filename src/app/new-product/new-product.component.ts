@@ -1,8 +1,9 @@
-import { Component } from "@angular/core";
+import { Component, ViewEncapsulation } from "@angular/core";
 import { ProductService } from "../shared/product.service";
 
 @Component({
-  templateUrl: './new-product.html'
+  templateUrl: './new-product.html',
+   styleUrls: ['./new-product.css']
 })
 export class NewProductComponent {
 
