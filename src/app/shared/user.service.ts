@@ -29,6 +29,7 @@ export class UserService {
   }
 
   isLoggedin(): boolean {
-    return !!localStorage.getItem("token");
+    return true;
+    //return !!localStorage.getItem("token");
   }
 }

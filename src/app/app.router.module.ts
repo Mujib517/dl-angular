@@ -24,7 +24,7 @@ const ROUTES: Route[] = [{ path: '', component: HomeComponent },
 { path: 'contact', component: ContactComponent },
 {
   path: 'products', component: ProductListComponent,
-  resolve: { products: ProductResolver }, canActivate: [ProductGaurd]
+  resolve: { products: ProductResolver }
 },
 { path: 'products/new', component: NewProductComponent, canDeactivate: [ProductGaurd] },
 { path: 'products/reactive', component: ReactiveFormComponent },
